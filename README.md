@@ -37,7 +37,7 @@ Screenshot of your mobile solution.
 ### Links
 
 - Solution URL: [GitHub](https://github.com/ChinyangaTL/Pricing-Component-Toggle)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [https://chinyangatl.github.io/Pricing-Component-Toggle/](https://chinyangatl.github.io/Pricing-Component-Toggle/)
 
 ## My process
 
