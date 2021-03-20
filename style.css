@@ -1,0 +1,223 @@
+:root {
+    --background-color: hsl(240, 78%, 98%);
+    --body-color: hsl(232, 13%, 33%);
+    --header-color: hsl(233, 13%, 49%);
+    --toggle-color:  hsl(234, 14%, 74%);
+    --gradient: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 15px;
+}
+
+@font-face {
+    font-family: MontserratBold;
+    src: url('/fonts/Montserrat-Bold.ttf');
+}
+
+@font-face {
+    font-family: MontserratRegular;
+    src: url('/fonts/Montserrat-Regular.ttf');
+}
+
+body {
+    font-family: MontserratBold;
+    background-color: var(--background-color);
+    color: var(--body-color);
+    text-align: center;
+    min-height: 100vh;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-image: url('/images/bg-top.svg');
+    width: 100%;
+    height: 100%;
+
+    background-repeat: no-repeat;
+    background-position: top right;
+    z-index: -1;
+}
+
+body::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-image: url('/images/bg-bottom.svg');
+    width: 100%;
+    height: 100%;
+
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    z-index: -1;
+}
+
+.containter {
+    margin: auto;
+    width: 1440px;
+    max-width: 100%;
+    
+    
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-wrapper h1 {
+    color: var(--header-color);
+}
+
+.toggle-wrapper {
+    color: var(--toggle-color);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toggle-wrapper input {
+    position: absolute;
+    top: -5000px;
+}
+
+.toggle-wrapper label {
+    cursor: pointer;
+    margin: 0 10px;
+    width: 50px;
+    height: 30px;
+    border-radius: 50px;
+    display: inline-block;
+    background-image: var(--gradient);
+    position: relative;
+}
+
+.toggle-wrapper label .ball {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color:#fff;
+    position: absolute;
+    top: 2.5px;
+    left: 2.5px;
+    transition: transform 0.3s ease;
+}
+
+.toggle-wrapper input:checked + label .ball {
+    /* left: auto;
+    right: 2.5px; */
+    transform: translateX(20.5px);
+}
+
+
+.card {
+    background-color: #fff;
+    color: var(--header-color);
+    padding: 2rem;
+    margin: 0.66rem;
+    border-radius: 10px;
+    box-shadow: 0 4 10px rgba(0,0,0,0.2);
+}
+
+.card .package {
+    margin: 0;
+}
+
+.card p {
+    margin: 1rem 0;
+    width: 250px;
+    margin: 2rem 0;
+}
+
+.card .price {
+    color: var(--body-color);
+    font-size: 3.5rem;
+    
+}
+
+.card .monthly {
+    display: none;
+}
+
+.show-monthly .card .monthly {
+    display: block;
+}
+
+.show-monthly .card .annually {
+    display: none;
+}
+
+.card ul {
+    list-style: none;
+    padding: 0;
+    border-top: 1px solid var(--toggle-color);
+}
+
+.card ul li {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--toggle-color);
+}
+
+.card .btn {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background-image: var(--gradient);
+    color: #fff;
+    padding: 1rem;
+    margin-top: 1rem;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+.card.professional {
+    background-image:  var(--gradient);
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.card.professional .price {
+    color: #fff;
+}
+
+.card.card.professional ul, 
+.card.professional ul li {
+    border-color: #fff;
+}
+
+.card.professional .btn {
+    background-image: none;
+    background-color: #fff;
+    color: hsl(237, 63%, 64%);
+}
+
+@media (max-width: 980px) {
+    .cards {
+        flex-direction: column;
+    }
+
+    .card.professional {
+        transform: scale(1);
+    }
+}
