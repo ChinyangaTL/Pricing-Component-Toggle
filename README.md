@@ -36,7 +36,7 @@ Screenshot of your desktop solution.
 Screenshot of your mobile solution. 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [GitHub](https://github.com/ChinyangaTL/Pricing-Component-Toggle)
 - Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
 ## My process
